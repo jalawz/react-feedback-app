@@ -5,16 +5,30 @@ const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
   const [feedbacks, setFeedbacks] = useState(FeedbackData);
+  const [feedbackEdit, setFeedbackEdit] = useState({
+    item: {},
+    edit: false,
+  });
 
+  // Add feedback
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4();
     setFeedbacks([newFeedback, ...feedbacks]);
   };
 
+  // Delete feedback
   const deleteFeedback = (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
       setFeedbacks(feedbacks.filter((feedback) => feedback.id !== id));
     }
+  };
+
+  // Set item to be updated
+  const editFeedback = (item) => {
+    setFeedbackEdit({
+      item,
+      edit: true,
+    });
   };
 
   return (
@@ -23,6 +37,7 @@ export const FeedbackProvider = ({ children }) => {
         feedbacks,
         deleteFeedback,
         addFeedback,
+        editFeedback,
       }}
     >
       {children}
