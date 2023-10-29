@@ -1,0 +1,19 @@
+{
+    "feedbacks": [
+        {
+            "id": 1,
+            "rating": 10,
+            "text": "Lorem ipsum sit dolor amet 1 from the backend"
+        },
+        {
+            "id": 2,
+            "rating": 8,
+            "text": "Lorem ipsum sit dolor amet 2 from the backend"
+        },
+        {
+            "id": 3,
+            "rating": 8,
+            "text": "Lorem ipsum sit dolor amet 3 from the backend"
+        }
+    ]
+}
